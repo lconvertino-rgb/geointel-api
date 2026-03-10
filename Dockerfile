@@ -5,7 +5,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY main.py .
+# Copy ALL app files (main.py + lookup_router.py + any future routers)
+COPY . .
 
 ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
