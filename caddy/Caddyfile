@@ -1,0 +1,15 @@
+{
+  # Optional email for Let's Encrypt
+  # email you@example.com
+}
+
+{$DOMAIN} {
+
+  encode gzip
+
+  handle_path /api/* {
+    reverse_proxy api:8000
+  }
+
+  respond "GeoIntelGIS server is running ✅" 200
+}
